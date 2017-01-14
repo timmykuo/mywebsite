@@ -82,8 +82,9 @@ html, body {
 	height: 50%;
 	float: top;
     background-image: url("assets/images/me.jpg");
+    background-attachment: scroll;
     background-position: center;
-    background-size: cover;
+    background-size: cover !important;
 }
 
 .about {
