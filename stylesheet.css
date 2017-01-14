@@ -82,8 +82,8 @@ html, body {
 	height: 50%;
 	float: top;
     background-image: url("assets/images/me.jpg");
-    background-position: fixed;
-    background-size: cover !important;
+    background-position: center;
+    background-size: cover;
 }
 
 .about {
