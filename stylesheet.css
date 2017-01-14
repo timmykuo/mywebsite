@@ -125,15 +125,22 @@ html, body {
 #body a {
     color: #848482;
     text-decoration: none;
-    border-bottom: 1px solid transparent;    
-    width: 0px;
-    transition: 0.5s ease;
-    white-space: nowrap;
+    position: relative;   
 }
 
-#body a:hover {
+#body a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid transparent; 
+  transition: 0.5s ease;
+}
+
+#body a:hover:after {
     border-bottom: 1px solid #B6B6B4; 
-    width: 100px;
+    width: 100%;
 }
 
 #icons {
