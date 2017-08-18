@@ -103,7 +103,11 @@ html, body {
 #icons {
 	display: block;
 	height: 35px;
+<<<<<<< HEAD
   width: 221px;
+=======
+    width: 221px;
+>>>>>>> 6f6382f7578ec4b06da41555f8672b419aa99f17
 }
 
 .about #icons img {
