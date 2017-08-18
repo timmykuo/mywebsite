@@ -46,7 +46,7 @@ html, body {
 
 }
 
-/*contact button style 
+/*contact button style
 #contact_button {
     border: 6px solid white;
     width: 240px;
@@ -63,7 +63,7 @@ html, body {
 
 #contact_button a {
     text-decoration: none;
-} */ 
+} */
 
 /*hello friend style */
 #header {
@@ -81,7 +81,7 @@ html, body {
 #body a {
     color: #848482;
     text-decoration: none;
-    position: relative;   
+    position: relative;
 }
 
 #body a:after {
@@ -90,12 +90,12 @@ html, body {
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid transparent; 
+  border-bottom: 1px solid transparent;
   transition: 0.5s ease;
 }
 
 #body a:hover:after {
-    border-bottom: 1px solid #B6B6B4; 
+    border-bottom: 1px solid #B6B6B4;
     width: 100%;
 }
 
@@ -103,11 +103,7 @@ html, body {
 #icons {
 	display: block;
 	height: 35px;
-<<<<<<< HEAD
   width: 221px;
-=======
-    width: 221px;
->>>>>>> 6f6382f7578ec4b06da41555f8672b419aa99f17
 }
 
 .about #icons img {
