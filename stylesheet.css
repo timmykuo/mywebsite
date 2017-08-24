@@ -79,12 +79,12 @@ html, body {
 }
 
 #body a {
-  color: #848482;
+  color: 	#808080; //#848482;
   text-decoration: none;
   position: relative;
 }
 
-#body a:after {
+#body p a:after {
   content: '';
   position: absolute;
   bottom: 0;
