@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto';
+}
+
+.description, .steps {
+  margin: 0 auto;
+	width: auto;
+	position: relative;
+  padding: 4% 15%;
+  padding-bottom: 25%;
+}
+
+.description:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index:99;
+  background-image: url("images/banner.png");
+  background-size: cover;
+  opacity: 0.5;
+}
+
+#textwrapper #title {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#step {
+  padding-bottom: 5%;
+}
+
+#step_body p {
+  padding-bottom: 1%;
+}
+
+#step_title {
+  padding-bottom: 1%;
+}
+
+.steps #step img {
+  	display: inline-block;
+    height: 400px;
+    width: 100%;
+}
+
+
+/*locations for tablet and larger picture and about */
+@media only screen and (min-width: 768px) {
+  .description {
+
+  }
+	.picture {
+		width: 50%;
+		height: 100%;
+		float: left;
+	}
+
+	.about {
+		width: 50%;
+		height: 100%;
+		float: right;
+		padding: 11% 5%;
+	}
+
+}
+
+#header {
+	font-family: 'Shadows Into Light', 'Lobster', sans-serif;
+	font-size: 40px;
+	color: #1F45FC; //#0000A0
+}
+
+/*info about me styles */
+#body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.5px;
+}
+
+#body a {
+  color: 	#808080; //#848482;
+  text-decoration: none;
+  position: relative;
+}
+
+#body p a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s ease;
+}
+
+#body a:hover:after {
+    border-bottom: 1px solid #B6B6B4;
+    width: 100%;
+}

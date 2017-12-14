@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91693520-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="assets/scripts/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title> Timothy Kuo's Projects </title>
+</head>
+<body>
+<div class="description">
+  <div id="textwrapper">
+    <div id="title">
+      <h1> Water Simulator </h1>
+    </div>
+  </div>
+  <div class="banner">
+  </div>
+</div>
+<!--
+step1:
+found 3D models trees/terrain/etc and put into world coordinates
+created the viewport
+shader files GLSL coding for basic local illumination calculators
+texture mapping for terrain/trees/objects
+height maps to put water Into
+
+step2:
+build basic water tiles for the scene
+
+-->
+<div class="steps">
+  <div id="step">
+    <div id="step_title">
+      <h2> 1. Background </h2>
+    </div>
+    <div id="step_body">
+      <p> A water simulation using Java and OpenGLthat focuses on a realistic render of water such as reflection, refraction, and somethign else. This page goes through the process of how this project was completed and the results at each step. Our source code will be linked at the bottom. </br> </br>Our first step was completing a background map to contain the water. It would be difficult to simulate water without some sort of container, so we decided to create a map for it. This was done by finding 3D models of trees and terrain online and putting them inside our world coordinates. From there, we created the viewport and some shader files (GLSL) for basic local illumination models. Finally, we placed a texture mapping onto the terrain and trees as well as a heigh map to give terrain depth that will be later used as the container for the water. </p>
+      <img src="images/background.png"></img>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 2. Water Tiles </h2>
+    </div>
+    <div id="step_body">
+      <p> Next, we needed to create an initial rendering of the water. This was done by defining a water tile along with a water shader and renderer with its respective textures. It was also necessary to place the water in a part of the scene where it was visible. </p>
+      <img src="images/step1.png"></img>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
