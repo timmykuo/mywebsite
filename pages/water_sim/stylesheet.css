@@ -16,7 +16,6 @@ html, body {
 	width: auto;
 	position: relative;
   padding: 4% 15%;
-  padding-bottom: 25%;
 }
 
 .description:after {
@@ -33,8 +32,15 @@ html, body {
 }
 
 #textwrapper #title {
-  vertical-align: middle;
+  line-height: 300px;
   text-align: center;
+}
+
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 60px;
 }
 
 #step {
@@ -55,7 +61,6 @@ html, body {
     width: 100%;
 }
 
-
 /*locations for tablet and larger picture and about */
 @media only screen and (min-width: 768px) {
   .description {
@@ -74,37 +79,4 @@ html, body {
 		padding: 11% 5%;
 	}
 
-}
-
-#header {
-	font-family: 'Shadows Into Light', 'Lobster', sans-serif;
-	font-size: 40px;
-	color: #1F45FC; //#0000A0
-}
-
-/*info about me styles */
-#body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 15.5px;
-}
-
-#body a {
-  color: 	#808080; //#848482;
-  text-decoration: none;
-  position: relative;
-}
-
-#body p a:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  border-bottom: 1px solid transparent;
-  transition: 0.5s ease;
-}
-
-#body a:hover:after {
-    border-bottom: 1px solid #B6B6B4;
-    width: 100%;
 }
