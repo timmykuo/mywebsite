@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91693520-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="assets/scripts/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title> Timothy Kuo's Projects </title>
+</head>
+<body>
+<div class="description">
+  <div id="textwrapper">
+    <div id="title">
+      <h1> Water Simulator </h1>
+    </div>
+  </div>
+  <div class="banner">
+  </div>
+</div>
+<!--
+step1:
+found 3D models trees/terrain/etc and put into world coordinates
+created the viewport
+shader files GLSL coding for basic local illumination calculators
+texture mapping for terrain/trees/objects
+height maps to put water Into
+
+step2:
+build basic water tiles for the scene
+
+-->
+<div class="steps">
+  <div id="step">
+    <div id="step_title">
+      <h2> 1. Background </h2>
+    </div>
+    <div id="step_body">
+      <p> A water simulation using Java, GLSL, and OpenGL that focuses on a realistic render of water involving reflection and refraction textures. This page goes through the process of how this project was completed and the results at each step. Collaborators: Timothy Kuo and <a href ="https://github.com/drewtoak?tab=repositories"> Andrew Hwang </a> <a href="https://github.com/timmykuo/WaterSimulator"> Source Code </a></br> </br> Our first step was completing a background map to contain the water. It would be difficult to simulate water without some sort of container, so we decided to create a map for it. This was done by finding 3D models of trees and terrain online and putting them inside our world coordinates. From there, we created the viewport and some shader files for basic local illumination models. Finally, we placed a texture mapping onto the terrain and trees as well as a heigh map to give terrain depth that will be later used as the container for the water. </p>
+      <img src="images/background.png"></img>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 2. Water Frame Buffer </h2>
+    </div>
+    <div id="step_body">
+      <p> At any point in the scene, we will be looking at the water from two angles – one, the reflection angle to see everything below the surface and two, at a refraction angle to see everything above the surface. To do this, we created our own frame buffers that act as textures for the default frame buffer. By creating two frame buffers for both reflection and refraction, we can render these frame buffers as reflection and refraction textures over our default frame buffers to texture our water that updates as we move our camera angle. It was also necessary to create an initial water quad that we will adjust using shader code. </p>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 3. Clipping Planes </h2>
+    </div>
+    <div id="step_body">
+      <p> When we render the refraction texture, we only want to render things that are below the surface. In the same way, when we render the reflection texturem we will only want to render the things above the surface. Essentially, we will have two cameras in order to represent a water's properties. It's important that we use clip planes in order to improve performance. </p>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 4. Reflection and Refraction </h2>
+    </div>
+    <div id="step_body">
+      <p> To show the reflection and refraction textures, we will use a projective texture mapping technique. This was done by finding the appropriate points on the clipping coordinate system and then converting this coordinate system to the screen space coordinate system to find the correct point on our textures to show on the water. The two textures will then be mixed and loaded into our frame buffer in the water renderer as discussed earlier. </p>
+      <img src="images/step4.png"></img>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 5. DuDv Maps - Rippling </h2>
+    </div>
+    <div id="step_body">
+      <p> DuDv maps will represent the distortion at different parts of the water with mostly red and green channels. This will be used to give the water a rippling effect to make it look more realistic. By adding the dudv map texture directly to the reflection and refraction texture coordinates, we can add a distortion to the reflection and refraction. However, we wanted to make the ripples move after adding the distortion to give it a more realistic look. Thus, we added an offset to the dudv map as a function over time in both the x and y directions. We removed the trees at this stage to speed up the rendering. </p>
+      <img src="images/step5.gif"></img>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 6. Fresnel Effect </h2>
+    </div>
+    <div id="step_body">
+      <p> The fresnel effect describes how the water looks different depending on the viewing angle. At a lower angle, the water looks very reflective but when looking at it from above, the water looks much more transparent. We can do this by using the angle of the camera. This way, when our angle is higher, we can show more of the refraction texture than the reflection texture and vice versa at a lower angle. </p>
+      <img src="images/step6.gif"></img>
+    </div>
+  </div>
+  <div id="step">
+    <div id="step_title">
+      <h2> 7. Specular Lighting </h2>
+    </div>
+    <div id="step_body">
+      <p> We also added a spectral lighting effect by using a similar method to the way that we did the dudv mapping. Our water is actually flat, so we have to use a normal map to pretend that it is bumpy along different points on the water's surface. It was also necessary to add in vectors to represent the light vectors and color in order to represent where the sun is.  Using these vectors, we can easily calculate the specular lighting where the closer the reflected light and view vector are, the brighter the specular highlight. </p>
+      <img src="images/step7.gif"></img>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
