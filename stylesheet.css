@@ -12,7 +12,7 @@ html, body {
 
 .navbar {
   position: fixed;
-  
+
 }
 
 /*locations for mobile picture and about */
@@ -30,7 +30,7 @@ html, body {
 	width: 100%;
 	height: 50%;
 	float: bottom;
-  padding: 2% 3%;
+    padding: 2% 3%;
 }
 
 
@@ -46,7 +46,7 @@ html, body {
 		width: 50%;
 		height: 100%;
 		float: right;
-		padding: 11% 5%;
+		padding: 13% 5%;
 	}
 
 }
